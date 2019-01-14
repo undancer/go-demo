@@ -26,9 +26,9 @@
 
 
  required = [
- "github.com/streadway/amqp",
- "github.com/olivere/elastic",
- "github.com/mattbaird/elastigo"
+# "github.com/streadway/amqp",
+# "github.com/olivere/elastic",
+# "github.com/mattbaird/elastigo"
  ]
 
  ignored = []
