@@ -168,3 +168,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/go,linux,macos,windows,intellij
+
+### 自定义 ###
+/build/

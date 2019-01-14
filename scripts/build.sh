@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
 echo build
-go build -o out/app
+
+export TARGET="build/app"
+export SOURCE="github.com/undancer/go-demo/cmd"
+
+go build -o "${TARGET}" "${SOURCE}"
