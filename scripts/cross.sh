@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-GOOS="${GOOS:-$(go env GOHOSTOS)}"
-GOARCH="${GOARCH:-$(go env GOHOSTARCH)}"
-
 BUILDDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 declare -A map=(
