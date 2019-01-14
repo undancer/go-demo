@@ -25,6 +25,34 @@
 #   unused-packages = true
 
 
+ required = [
+ "github.com/streadway/amqp",
+ "github.com/olivere/elastic",
+ "github.com/mattbaird/elastigo"
+ ]
+
+ ignored = []
+
 [prune]
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/streadway/amqp"
+
+[[constraint]]
+  name = "github.com/olivere/elastic"
+  version = "6.2.15"
+
+[[constraint]]
+  name = "github.com/mattbaird/elastigo"
+  version = "1.0.0"
+
+[[constraint]]
+  name = "github.com/mongodb/mongo-go-driver"
+  version = "0.2.0"
+
+[[constraint]]
+  name = "github.com/neo4j/neo4j-go-driver"
+  version = "1.7.1"
