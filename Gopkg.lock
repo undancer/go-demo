@@ -2,12 +2,12 @@
 
 
 [[projects]]
-  branch = "master"
-  digest = "1:d48cc03a21c4a768e554f378f0061f7b3000b68ee8fc804040cb0de76574d3ca"
-  name = "github.com/bitly/go-hostpool"
+  digest = "1:ec6f9bf5e274c833c911923c9193867f3f18788c461f76f05f62bb1510e0ae65"
+  name = "github.com/go-sql-driver/mysql"
   packages = ["."]
   pruneopts = "UT"
-  revision = "a3a6125de9329587178a9792dc8f4bc98e620d2d"
+  revision = "72cd26f257d44c1114970e19afddcd812016007e"
+  version = "v1.4.1"
 
 [[projects]]
   digest = "1:586ea76dbd0374d6fb649a91d70d652b7fe0ccffb8910a77468e7702e7901f3d"
@@ -24,33 +24,6 @@
   packages = ["."]
   pruneopts = "UT"
   revision = "2e65f85255dbc3072edf28d6b5b8efc472979f5a"
-
-[[projects]]
-  branch = "master"
-  digest = "1:aa3d8d42865c42626b5c1add193692d045b3188b1479f0a0a88690d21fe20083"
-  name = "github.com/mailru/easyjson"
-  packages = [
-    ".",
-    "buffer",
-    "jlexer",
-    "jwriter",
-  ]
-  pruneopts = "UT"
-  revision = "60711f1a8329503b04e1c88535f419d0bb440bff"
-
-[[projects]]
-  digest = "1:a13e6ff98f7530552fc979d548e281f53435a1a7d785313cb7d33a1968e4bfc3"
-  name = "github.com/mattbaird/elastigo"
-  packages = [
-    ".",
-    "api",
-    "cluster",
-    "core",
-    "indices",
-  ]
-  pruneopts = "UT"
-  revision = "0c98885a2b2575c99882263dfc4bf6aae9079a63"
-  version = "v1.0"
 
 [[projects]]
   digest = "1:27fa1b385644151ee1fc0c8b04f1f86963d9701335491b94488fd3912e370354"
@@ -108,26 +81,6 @@
   version = "v1.7.1"
 
 [[projects]]
-  digest = "1:e9ba3a532b2aedc8f8dcc06e136f794d496be02eb2ab17fb56e4b30152d0cfc1"
-  name = "github.com/olivere/elastic"
-  packages = [
-    ".",
-    "config",
-    "uritemplates",
-  ]
-  pruneopts = "UT"
-  revision = "f5738570b28a4b5fab39442e3a5b5ffc599a562c"
-  version = "v6.2.15"
-
-[[projects]]
-  digest = "1:cf31692c14422fa27c83a05292eb5cbe0fb2775972e8f1f8446a71549bd8980b"
-  name = "github.com/pkg/errors"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
-  version = "v0.8.1"
-
-[[projects]]
   branch = "master"
   digest = "1:525ac3364813b4688df380594e562133e07830dfce0722effda64b37634c13d0"
   name = "github.com/streadway/amqp"
@@ -182,14 +135,23 @@
   revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
   version = "v0.3.0"
 
+[[projects]]
+  digest = "1:c25289f43ac4a68d88b02245742347c94f1e108c534dda442188015ff80669b3"
+  name = "google.golang.org/appengine"
+  packages = ["cloudsql"]
+  pruneopts = "UT"
+  revision = "e9657d882bb81064595ca3b56cbe2546bbabf7b1"
+  version = "v1.4.0"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/mattbaird/elastigo",
+    "github.com/go-sql-driver/mysql",
+    "github.com/mongodb/mongo-go-driver/bson",
     "github.com/mongodb/mongo-go-driver/mongo",
+    "github.com/mongodb/mongo-go-driver/mongo/options",
     "github.com/neo4j/neo4j-go-driver/neo4j",
-    "github.com/olivere/elastic",
     "github.com/streadway/amqp",
   ]
   solver-name = "gps-cdcl"

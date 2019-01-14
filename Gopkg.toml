@@ -26,6 +26,7 @@
 
 
  required = [
+# "github.com/go-sql-driver/mysql"
 # "github.com/streadway/amqp",
 # "github.com/olivere/elastic",
 # "github.com/mattbaird/elastigo"
@@ -56,3 +57,7 @@
 [[constraint]]
   name = "github.com/neo4j/neo4j-go-driver"
   version = "1.7.1"
+
+[[constraint]]
+  name = "github.com/go-sql-driver/mysql"
+  version = "1.4.1"
