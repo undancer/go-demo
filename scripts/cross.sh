@@ -13,8 +13,8 @@ for key in ${!map[@]}
 do
   for value in ${map[$key]}
   do
-    export GOOS=$key
-    export GOARCH=$value
+    export GOOS=${key}
+    export GOARCH=${value}
     ${BUILDDIR}/build.sh
   done
 done
