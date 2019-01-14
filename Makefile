@@ -1,7 +1,11 @@
 
 
+.PHONY: all
+all: clean build
+
+.PHONY: build
 build:
-	go build -o out/app
+	scripts/build.sh
 
 .PHONY: clean
 clean:
