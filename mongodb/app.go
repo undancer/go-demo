@@ -14,8 +14,8 @@ const (
 	url        = "mongodb://localhost:27017"
 	database   = "go-database"
 	collection = "go-collection"
-	username   = "mongo"
-	password   = "mongo"
+	//username   = "mongo"
+	//password   = "mongo"
 )
 
 func Main() {
@@ -27,7 +27,7 @@ func Main() {
 
 	ctx, _ = context.WithTimeout(context.Background(), 10*time.Second)
 
-	if client, err = mongo.Connect(ctx, url, nil); err != nil {
+	if client, err = mongo.Connect(ctx, url); err != nil {
 		log.Println(err.Error())
 	}
 	_database := client.Database(database)
