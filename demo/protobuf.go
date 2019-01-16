@@ -8,22 +8,28 @@ import (
 )
 
 func main() {
-	var p = tutorial.Person{
-		Id:    1,
-		Name:  "undancer",
-		Email: "1@c.cn",
-		Phones: []*tutorial.Person_PhoneNumber{
-			{Number: "555", Type: tutorial.Person_MOBILE},
+	ab := tutorial.AddressBook{
+		People: []*tutorial.Person{
+			{
+				Id:    1,
+				Name:  "undancer",
+				Email: "1@c.cn",
+				Phones: []*tutorial.Person_PhoneNumber{
+					{Number: "555", Type: tutorial.Person_MOBILE},
+				},
+			},
 		},
 	}
 
-	fmt.Println(p)
+	fmt.Println(ab)
+	fmt.Println(len(ab.String()))
 
-	buff, err := proto.Marshal(&p);
+	buff, err := proto.Marshal(&ab);
 	if err != nil {
 		log.Println(err.Error())
 	}
 
 	fmt.Println(buff)
+	fmt.Println(len(buff))
 	fmt.Println(string(buff))
 }
