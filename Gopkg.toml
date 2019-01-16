@@ -71,3 +71,8 @@
   name = "github.com/golang/protobuf"
   branch = "master"
 #  version = "1.2.0"
+
+[[constraint]]
+  name = "github.com/trustmaster/goflow"
+#  version = "0.1.0"
+  branch = "master"
