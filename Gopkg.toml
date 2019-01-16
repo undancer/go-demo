@@ -26,6 +26,7 @@
 
 
  required = [
+# "github.com/golang/protobuf/protoc-gen-go"
 # "github.com/go-sql-driver/mysql"
 # "github.com/streadway/amqp",
 # "github.com/olivere/elastic",
@@ -65,3 +66,8 @@
 [[constraint]]
   branch = "master"
   name = "github.com/koding/cache"
+
+[[constraint]]
+  name = "github.com/golang/protobuf"
+  branch = "master"
+#  version = "1.2.0"
