@@ -76,3 +76,11 @@
   name = "github.com/trustmaster/goflow"
 #  version = "0.1.0"
   branch = "master"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/ungerik/go-dry"
+
+[[constraint]]
+  name = "github.com/caarlos0/env"
+  version = "3.5.0"
