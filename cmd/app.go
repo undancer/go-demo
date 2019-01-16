@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	switch "mysql" {
+	switch "sign" {
 	case "rabbitMQ":
 		rabbitmq.Main()
 		break
