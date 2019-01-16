@@ -84,3 +84,11 @@
 [[constraint]]
   name = "github.com/caarlos0/env"
   version = "3.5.0"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/chrislusf/glow"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/petermattis/goid"

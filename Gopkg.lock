@@ -10,6 +10,23 @@
   version = "v3.5.0"
 
 [[projects]]
+  branch = "master"
+  digest = "1:90ff1ca2edd8e1304cf13981e9664c0395c6264ed96a829bf426ce445864a220"
+  name = "github.com/chrislusf/glow"
+  packages = [
+    "flow",
+    "netchan",
+    "netchan/receiver",
+    "netchan/sender",
+    "resource",
+    "resource/service_discovery/client",
+    "resource/service_discovery/master",
+    "util",
+  ]
+  pruneopts = "UT"
+  revision = "4c40a2717eee6512247ce30ab8a8428348d6d9e9"
+
+[[projects]]
   digest = "1:ec6f9bf5e274c833c911923c9193867f3f18788c461f76f05f62bb1510e0ae65"
   name = "github.com/go-sql-driver/mysql"
   packages = ["."]
@@ -125,6 +142,22 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:64b5f903788b2f79536f1c4d8d8ac0dc0dae857eb0711bbbb8918e5673613439"
+  name = "github.com/petermattis/goid"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "b0b1615b78e5ee59739545bb38426383b2cda4c9"
+
+[[projects]]
+  branch = "master"
+  digest = "1:3e9110d2cfd2f5a1342142cd005cb4336e04a63dadbc54c0a7b6c037514bc05f"
+  name = "github.com/psilva261/timsort"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "fa3a1b6085e16ad203c697f7d5d4df863dc6a5ff"
+
+[[projects]]
+  branch = "master"
   digest = "1:525ac3364813b4688df380594e562133e07830dfce0722effda64b37634c13d0"
   name = "github.com/streadway/amqp"
   packages = ["."]
@@ -213,6 +246,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/caarlos0/env",
+    "github.com/chrislusf/glow/flow",
     "github.com/go-sql-driver/mysql",
     "github.com/golang/protobuf/proto",
     "github.com/golang/protobuf/ptypes/timestamp",
@@ -221,6 +255,7 @@
     "github.com/mongodb/mongo-go-driver/mongo",
     "github.com/mongodb/mongo-go-driver/mongo/options",
     "github.com/neo4j/neo4j-go-driver/neo4j",
+    "github.com/petermattis/goid",
     "github.com/streadway/amqp",
     "github.com/trustmaster/goflow",
   ]
