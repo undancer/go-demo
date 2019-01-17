@@ -60,8 +60,8 @@ func main() {
 		m.write(goid.Get(), "r1")
 		return x + y
 	}).Map(func(x int) {
-		println("r2", goid.Get())
-		m.write(goid.Get(), "r2")
+		println("m3", goid.Get())
+		m.write(goid.Get(), "m3")
 		println("count:", x)
 	}).Run()
 
