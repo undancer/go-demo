@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 )
 
@@ -16,16 +17,17 @@ func (mq *MQ) Close() {
 }
 
 func main() {
+	ctx, cancel := context.WithCancel(context.Background())
 	ch := make(chan int)
-	sessions := make(chan struct {})
+	//sessions := make(chan struct{})
 	//mq := new(MQ)
 	//defer mq.Close()
 
-	c := func() {
+	close := func() {
 		fmt.Println("close")
 	}
 
-	defer c()
+	defer close()
 
 	g := func(i int) {
 		fmt.Println("g", i)
@@ -43,7 +45,8 @@ func main() {
 			fmt.Println("p", r)
 			ch <- r
 		}
-		close(sessions)
+		cancel()
+		//close(sessions)
 	}()
 
 	go func() {
@@ -54,15 +57,18 @@ func main() {
 		}
 	}()
 
+FOO:
 
 	for {
 		select {
-		case i:= <-ch:
+		case i := <-ch:
 			//println(reflect.TypeOf(ok))
 			f(i)
-		case <-sessions:
+		case <-ctx.Done():
 			fmt.Println("done")
-			return
+			break FOO
 		}
 	}
+
+	fmt.Println(ctx.Err())
 }
