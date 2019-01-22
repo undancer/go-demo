@@ -36,6 +36,8 @@ github.com/mediocregopher/radix/v3 v3.2.0 h1:/Js1JYSq3K34PHTciEm2BDSV0pZZcnKiBXq
 github.com/mediocregopher/radix/v3 v3.2.0/go.mod h1:baVzIVpQ8FpvCE6s+XbkoLkBRRI6k/e/HcSNhJDdFjk=
 github.com/mongodb/mongo-go-driver v0.2.0 h1:MBI/hnb0LiACJRVAlT+nL5wdtV4EFKTjJEhQdapZFB0=
 github.com/mongodb/mongo-go-driver v0.2.0/go.mod h1:NK/HWDIIZkaYsnYa0hmtP443T5ELr0KDecmIioVuuyU=
+github.com/msbranco/goconfig v0.0.0-20160629072055-3189001257ce h1:QtMvEL/+svm0fxbpyRZS0aquv34BCfMwksEE+2aTLZU=
+github.com/msbranco/goconfig v0.0.0-20160629072055-3189001257ce/go.mod h1:PKNAOitD7HlXaDyVXgbpVnof2Th8T7Glv5Wz0lJLCEg=
 github.com/neo4j-drivers/gobolt v1.7.1 h1:Y9XwI2pPQZm7ZOaKukIzmnJUJDVph7G/Cs7e18Pxfo4=
 github.com/neo4j-drivers/gobolt v1.7.1/go.mod h1:O9AUbip4Dgre+CD3p40dnMD4a4r52QBIfblg5k7CTbE=
 github.com/neo4j/neo4j-go-driver v1.7.1 h1:dyhtC72WZ0mZtNJ32+w7GPqkcN9CL0W8VtOTApnrNC0=

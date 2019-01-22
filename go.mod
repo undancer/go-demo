@@ -13,6 +13,7 @@ require (
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/mediocregopher/radix/v3 v3.2.0
 	github.com/mongodb/mongo-go-driver v0.2.0
+	github.com/msbranco/goconfig v0.0.0-20160629072055-3189001257ce // indirect
 	github.com/neo4j-drivers/gobolt v1.7.1 // indirect
 	github.com/neo4j/neo4j-go-driver v1.7.1
 	github.com/onsi/ginkgo v1.7.0 // indirect
