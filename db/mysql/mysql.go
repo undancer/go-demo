@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+//参考：http://go-database-sql.org/varcols.html
+
 type DB struct {
 	db *sql.DB
 }
@@ -46,55 +48,37 @@ func Close() {
 func fetch(db *sql.DB, query string) (results []interface{}) {
 	rows, err := db.Query(query)
 
-	columns, err := rows.Columns()
-
 	columnTypes, err := rows.ColumnTypes()
 
-	values := make([]sql.RawBytes, len(columns))
+	values := make([]interface{}, len(columnTypes))
 
-	scanArgs := make([]interface{}, len(values))
-
-	//cols, err := rows.Columns() // Remember to check err afterwards
-	//vals := make([]interface{}, len(cols))
-	//for i, _ := range cols {
-	//	vals[i] = new(sql.RawBytes)
-	//}
-
-	for i := range scanArgs {
-		scanArgs[i] = &values[i]
+	for i := range values {
+		values[i] = new(sql.RawBytes)
 	}
 
 	for rows.Next() {
-		err = rows.Scan(scanArgs...)
+		err = rows.Scan(values...)
 		if err != nil {
-			fmt.Println("sss", err)
+			fmt.Println(err)
 		}
 
 		result := make(map[string]string, len(columnTypes))
 
-		for i, col := range scanArgs {
-			cp := col.(*sql.RawBytes)
-			cv := *cp
-
-			fmt.Println("scan", i, cv)
-		}
-
-		for i, col := range values {
-			//c := &col
-
-			fmt.Println("vals", i, col)
-		}
-
 		var value string
 		for i, col := range values {
+			key := columnTypes[i].Name()
+
+			cp := col.(*sql.RawBytes)
+			cv := *cp
+			col := cv
+
 			if col == nil {
 				value = "NULL"
 			} else {
 				value = string(col)
 			}
 
-			result[columns[i]] = value
-
+			result[key] = value
 		}
 
 		results = append(results, result)
