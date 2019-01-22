@@ -45,7 +45,7 @@ func Close() {
 
 }
 
-func fetch(db *sql.DB, query string) (results []interface{}) {
+func fetch(db *sql.DB, query string, size int) (results []interface{}) {
 	rows, err := db.Query(query)
 
 	columnTypes, err := rows.ColumnTypes()
@@ -56,7 +56,13 @@ func fetch(db *sql.DB, query string) (results []interface{}) {
 		values[i] = new(sql.RawBytes)
 	}
 
+	n := 0
 	for rows.Next() {
+
+		if size > 0 && n > size {
+			break
+		}
+
 		err = rows.Scan(values...)
 		if err != nil {
 			fmt.Println(err)
@@ -82,7 +88,7 @@ func fetch(db *sql.DB, query string) (results []interface{}) {
 		}
 
 		results = append(results, result)
-
+		n++
 	}
 
 	if err = rows.Err(); err != nil {
@@ -93,5 +99,9 @@ func fetch(db *sql.DB, query string) (results []interface{}) {
 }
 
 func (m *DB) FetchOne(sql string) (result []interface{}) {
-	return fetch(m.db, sql)
+	return fetch(m.db, sql, 1)
+}
+
+func (m *DB) FetchAll(sql string) (result []interface{}) {
+	return fetch(m.db, sql, -1)
 }

@@ -17,13 +17,15 @@ func configMysql() {
 
 	db := mysql.NewDB()
 
-	rs := db.FetchOne("SELECT * FROM pio_meta_accesskeys")
+	rs := db.FetchAll("SELECT * FROM pio.pio_event_1;")
 
-	for _, r := range rs {
+	for i, r := range rs {
 		//r
+		fmt.Println(i, ")-----------------------------")
 		for k, v := range r.(map[string]string) {
 			fmt.Println("mysql", k, v)
 		}
+		fmt.Println("-----------------------------")
 	}
 
 	//var (
