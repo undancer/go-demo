@@ -13,12 +13,12 @@ type DB struct {
 	db *sql.DB
 }
 
-func NewDB() (mdb *DB) {
-	username := "pio"
-	password := "pio"
-	host := "localhost"
-	port := "3306"
-	database := "pio"
+func NewDB(config map[string]string) (mdb *DB) {
+	username := config["username"]
+	password := config["password"]
+	host := config["host"]
+	port := config["port"]
+	database := config["database"]
 	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?tls=skip-verify&autocommit=true", username, password, host, port, database)
 
 	var db *sql.DB
@@ -37,12 +37,8 @@ func NewDB() (mdb *DB) {
 
 }
 
-func (d *DB) Close() {
-
-}
-
-func Close() {
-
+func (this *DB) Close() {
+	this.db.Close()
 }
 
 func fetch(db *sql.DB, query string, size int) (results []interface{}) {
@@ -98,10 +94,17 @@ func fetch(db *sql.DB, query string, size int) (results []interface{}) {
 	return
 }
 
-func (m *DB) FetchOne(sql string) (result []interface{}) {
-	return fetch(m.db, sql, 1)
+func (this *DB) FetchOne(sql string) (result interface{}) {
+	defer this.Close()
+	results := fetch(this.db, sql, 1)
+	if len(results) > 0 {
+		result = results[0]
+	}
+	return
 }
 
-func (m *DB) FetchAll(sql string) (result []interface{}) {
-	return fetch(m.db, sql, -1)
+func (this *DB) FetchAll(sql string) (results []interface{}) {
+	defer this.Close()
+	results = fetch(this.db, sql, -1)
+	return
 }

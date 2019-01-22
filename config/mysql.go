@@ -15,7 +15,14 @@ func init() {
 
 func configMysql() {
 
-	db := mysql.NewDB()
+	config := make(map[string]string)
+	config["host"] = "localhost"
+	config["port"] = "3306"
+	config["username"] = "pio"
+	config["password"] = "pio"
+	config["database"] = "pio"
+
+	db := mysql.NewDB(config)
 
 	rs := db.FetchAll("SELECT * FROM pio.pio_event_1;")
 
@@ -27,42 +34,5 @@ func configMysql() {
 		}
 		fmt.Println("-----------------------------")
 	}
-
-	//var (
-	//	db   *sql.DB
-	//	conn *sql.Conn
-	//	err  error
-	//)
-	//
-	//ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	//
-	//if db, err = sql.Open("mysql", mysqlUrl); err != nil {
-	//	fmt.Println(err)
-	//}
-	//
-	//if err = db.Ping(); err != nil {
-	//	fmt.Println(err)
-	//}
-	//
-	//db.SetMaxOpenConns(10)
-	//db.SetMaxIdleConns(10)
-	//
-	//if conn, err = db.Conn(ctx); err != nil {
-	//	fmt.Println(err)
-	//}
-	//
-	//var stmt *sql.Stmt
-	//
-	//if stmt, err = conn.PrepareContext(ctx, "S"); err != nil {
-	//
-	//}
-	//
-	//stmt.QueryRow("")
-	//
-	//fmt.Println(conn)
-	//
-	//fmt.Println(db)
-	//
-	//fmt.Println(ctx)
-
+	
 }
